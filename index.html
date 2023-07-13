@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      input {
+        appearance: none; /*Search why, turn off the native look & feel of widgets on some browsers.as much as possible, and lets you build up the styles yourself using CSS. but not functionality.*/
+        -webkit-appearance: none;
+        width: 100%;
+        caret-color: deepskyblue; /*style the line indecator (|)*/
+      }
+      input:placeholder-shown {
+        text-overflow: ellipsis;
+      }
+
+      .position-relative {
+        position: relative;
+        width: 300px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- <input placeholder="Search " /> -->
+
+    <style>
+      input.use-psudo-element {
+        padding-right: 30px;
+      }
+      input.use-psudo-element + *:before {
+        content: "🔍";
+        position: absolute;
+        top: 0px;
+        right: -30px;
+      }
+    </style>
+    <section class="position-relative">
+      <input
+        id="searchInput"
+        class="use-psudo-element"
+        type="text"
+        placeholder="Search ..."
+      />
+      <span></span>
+    </section>
+
+    <style>
+      input:in-range {
+        background-color: palegreen;
+        border: 2px solid green;
+      }
+      input:out-of-range {
+        background-color: orangered;
+        border: 2px solid red;
+      }
+    </style>
+    <section class="position-relative">
+      <label for="price">Price (range fron 1 - 10)</label>
+      <input name="price" type="number" min="1" max="10" value="4" />
+    </section>
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <!-- ======================================================== -->
+
+    <style>
+      input:valid {
+        background-color: ivory;
+        border: none;
+        outline: 2px solid deepskyblue;
+        accent-color: gold;
+      }
+      /* input:invalid {
+        background-color: orangered;
+        border: 2px solid red;
+        accent-color: gold;
+      } */
+      input:user-invalid {
+        /* ... */
+        background-color: orangered;
+        border: 2px solid red;
+        accent-color: gold;
+      }
+      input:required {
+        background-color: gold;
+      }
+      input::placeholder {
+        color: tomato;
+      }
+    </style>
+    <section class="position-relative">
+      <label for="email">Email Address:</label>
+      <input name="email" type="email" value="na@me@example.com" />
+    </section>
+  </body>
+</html>
